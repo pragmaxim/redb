@@ -1005,7 +1005,6 @@ impl Builder {
     /// ## Defaults
     ///
     /// Default to 4 Kib pages.
-    #[cfg(any(fuzzing, test))]
     pub fn set_page_size(&mut self, size: usize) -> &mut Self {
         assert!(size.is_power_of_two());
         self.page_size = std::cmp::max(size, 512);
